@@ -3,7 +3,9 @@ const app = express();
 require('dotenv').config();
 const { engine } = require('express-handlebars');
 const path = require('path');
-const PORT = process.env.PORT || 8080
+const homeRoute = require('./routers/homeRouter');
+const shopRoute = require('./routers/shopRouter');
+const PORT = process.env.PORT || 8080;
 
 // Handlebars 
 app.engine('.hbs', engine({ extname: '.hbs' }));
@@ -12,21 +14,11 @@ app.set('views', './views')
 // Static file
 app.use(express.static(path.join(__dirname, 'public')));
 
-// Home page
-app.get('/', (req, res) => {
-	res.render('home', {
-		title: "Home page",
-		URL: process.env.URL
-	})
-});
 
+// Pages initialization
+app.use(homeRoute);
 // Shop page
-app.get('/shop', (req, res) => {
-	res.render('shop', {
-		title: "Shop page",
-		URL: process.env.URL
-	})
-})
+app.use(shopRoute);
 // About page
 app.get('/about', (req, res) => {
 	res.render('about', {
