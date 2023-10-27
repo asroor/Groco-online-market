@@ -90,7 +90,7 @@ section {
 	}
 }
 
-.btn {
+input.btn {
 	margin-top: 1rem;
 	display: inline-block;
 	padding: .8rem 3rem;
@@ -101,6 +101,7 @@ section {
 
 	&:hover {
 		background: $black;
+		color: $white !important;
 	}
 }
 
@@ -1052,6 +1053,7 @@ section {
 	}
 
 }
+
 #addShop {
-	margin-top: 100px;
+	margin: 100px 0;
 }

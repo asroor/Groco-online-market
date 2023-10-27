@@ -7,11 +7,14 @@ const getAllPosts = () => {
     return posts
 };
 // Add post to database
-const addPost = (post) => {
+const addPost = async (post) => {
     const posts = JSON.parse(fs.readFileSync(path.join(__dirname, 'db.json'), 'utf8'));
-    posts.push(JSON.stringify(post));
-    return posts
+    posts.push(post);
+    fs.readFileSync(path.join(__dirname, 'db.json'), JSON.stringify(posts), 'utf8', (err) => {
+        if (err) throw err;
+    });
 }
 module.exports = {
-    getAllPosts
+    getAllPosts,
+    addPost
 }

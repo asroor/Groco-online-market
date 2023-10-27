@@ -1,16 +1,23 @@
 <section id="addShop">
-    <div class="container">
-        <form action="" class="form">
+        <form action="/shop/add" method="POST" class="form">
             <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label">Shop title</label>
                 <input type="text" class="form-control" id="formGroupExampleInput" name="title"
-                    placeholder="type shop title">
+                    placeholder="write shop title">
             </div>
             <div class="mb-3">
-                <label for="formGroupExampleInput2" class="form-label">Another label</label>
-                <input type="text" class="form-control" id="formGroupExampleInput2"
-                    placeholder="Another input placeholder">
+                <label for="formGroupExampleInput2" class="form-label">Shop price</label>
+                <input type="number" name="price" class="form-control" id="formGroupExampleInput2"
+                    placeholder="write shop price">
             </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput3" class="form-label">Shop main img</label>
+                <input type="file" name="main_img" class="form-control" id="formGroupExampleInput3">
+            </div>
+            <div class="mb-3">
+                <label for="formGroupExampleInput4" class="form-label">Shop card img</label>
+                <input type="file" name="card_img" class="form-control" id="formGroupExampleInput4">
+            </div>
+            <button type="submit" class="btn btn-primary">Add shop</button>
         </form>
-    </div>
 </section>

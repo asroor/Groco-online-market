@@ -68,7 +68,7 @@ section {
   color: #bac34e;
 }
 
-.btn {
+input.btn {
   margin-top: 1rem;
   display: inline-block;
   padding: 0.8rem 3rem;
@@ -77,8 +77,9 @@ section {
   font-size: 1.7rem;
   cursor: pointer;
 }
-.btn:hover {
+input.btn:hover {
   background: #222;
+  color: #fff !important;
 }
 
 .header {
@@ -864,5 +865,5 @@ section {
   }
 }
 #addShop {
-  margin-top: 100px;
+  margin: 100px 0;
 }/*# sourceMappingURL=style.css.map */
